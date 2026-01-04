@@ -57,6 +57,8 @@ InfraDiff is packaged as an **installable npm CLI** and designed to be reusable 
 
 ## 🧪 How to Run
 
+##(Make sure you have a Gemini API key (as GEMINI_API_KEY) set in your system's environment variables)
+
 ### 1️⃣ Save your Terraform plan as JSON
 ```bash
 terraform plan -out tf.plan
