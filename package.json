@@ -1,0 +1,24 @@
+{
+  "name": "infradiff",
+  "version": "1.0.0",
+  "description": "Infra analysis CLI",
+  "type": "module",
+  "bin": {
+    "infradiff": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
+  }
+}
