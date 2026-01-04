@@ -67,10 +67,7 @@ terraform show -json tf.plan > plan.json
 
 ### 2️⃣ Analyze the plan with InfraDiff
 ```bash
-#in root directory
-npm run build
-npm install -g .
-npm link
+npm install infradiff
 
 #in the directory where your terraform plan resides:
 infradiff analyze plan.json
@@ -88,7 +85,6 @@ InfraDiff will output:
 - Support for additional cloud providers (AWS, GCP, Azure)  
 - Support for multiple AI models  
 - CI/CD integration to block risky deployments automatically  
-- Public npm publication  
 
 ---
 
