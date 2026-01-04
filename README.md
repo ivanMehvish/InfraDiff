@@ -45,7 +45,7 @@ This design avoids AI hallucinations in safety-critical infrastructure decisions
 
 ---
 
-## 🛠️ How We Built It
+## 🛠️ How I Built It
 - **Language:** TypeScript  
 - **CLI:** Node.js + Commander  
 - **AI:** Gemini 2.5  
@@ -57,15 +57,21 @@ InfraDiff is packaged as an **installable npm CLI** and designed to be reusable 
 
 ## 🧪 How to Run
 
-### 1️⃣ Generate a Terraform plan
+### 1️⃣ Save your Terraform plan as JSON
 ```bash
-terraform plan -out=tf.plan
+terraform plan -out tf.plan
 terraform show -json tf.plan > plan.json
 ```
 
 ### 2️⃣ Analyze the plan with InfraDiff
 ```bash
-npm run infradiff -- analyze plan.json
+#in root directory
+npm run build
+npm install -g .
+npm link
+
+#in the directory where your terraform plan resides:
+infradiff analyze plan.json
 ```
 
 InfraDiff will output:
@@ -73,29 +79,6 @@ InfraDiff will output:
 - Downtime warning
 - Plain-English explanation of the change
 
----
-
-## ⚠️ Challenges We Ran Into
-- Preventing AI hallucinations in infrastructure analysis  
-- Designing deterministic rules for safety-critical decisions  
-- Packaging a TypeScript CLI as a reusable npm library  
-- Handling ESM and tooling compatibility on Windows  
-
----
-
-## 🏆 Accomplishments We’re Proud Of
-- Built a **real, working CLI tool** for infrastructure safety  
-- Designed a **responsible AI architecture** (rules decide, AI explains)  
-- Packaged InfraDiff as an **installable npm library**  
-- Solved a real DevOps problem experienced firsthand  
-
----
-
-## 📚 What We Learned
-- Working with Terraform and the Vultr provider  
-- Designing extensible CLI tools in TypeScript  
-- Creating and packaging npm libraries  
-- Integrating Gemini AI in a production-style workflow  
 
 ---
 
